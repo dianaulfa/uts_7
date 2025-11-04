@@ -14,7 +14,11 @@ class _HomeViewState extends State<HomeView> {
   final List<Widget> _pages = [
     BerandaPage(),
     InputPage(),
-    HasilPage(),
+    HasilPage(
+      desa: 'Belum Ada Data',
+      nilai: 0.0,
+      sentimen: 'Netral',
+    ),
   ];
 
   @override
@@ -26,9 +30,18 @@ class _HomeViewState extends State<HomeView> {
         selectedItemColor: Colors.green,
         onTap: (i) => setState(() => _index = i),
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.edit), label: "Input"),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Hasil"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Beranda',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.edit),
+            label: 'Input',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Hasil',
+          ),
         ],
       ),
     );
